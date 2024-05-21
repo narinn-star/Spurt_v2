@@ -5,7 +5,7 @@ import ButtonXL from '@/components/buttons/ButtonXL';
 export default function Signin() {
   return (
     <div className="w-screen h-screen bg-cover bg-fixed bg-background">
-      <div className="absolute top-0 left-0 bg-background">
+      <div className="absolute bg-background">
         <Image src={IllustSignIn} alt="signin" />
         <div className="mt-[50px] mb-[40px] flex justify-center bg-background">
           <ButtonXL>구글로 로그인하기</ButtonXL>
