@@ -28,6 +28,7 @@ body {
   color: #302e2e;
   font-size: 100px;
   background: #f9f6f5;
+  overflow-x: hidden;
 }
 
 @layer utilities {
