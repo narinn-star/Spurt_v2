@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import localFont from 'next/font/local';
+import RecoilRootWrapper from '@/lib/RecoilWrapper';
 
 const pretendard = localFont({
   src: '/fonts/PretendardVariable.woff2',
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${pretendard.variable} font-pretendard`}>
-        {children}
+        <RecoilRootWrapper>{children}</RecoilRootWrapper>
       </body>
     </html>
   );
