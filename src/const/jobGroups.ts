@@ -10,7 +10,7 @@ const developer: JobGroup = {
 
 const designer: JobGroup = {
   name: 'DESIGNER',
-  code: '디자이너',
+  code: '디자인',
 };
 
 const marketer: JobGroup = {
@@ -23,18 +23,13 @@ const etc: JobGroup = {
   code: '그 외 직군',
 };
 
-export const allJobGroupCodeMap = new Map<string, JobGroup>([
-  [developer.code, developer],
-  [designer.code, designer],
-  [marketer.code, marketer],
-  [etc.code, etc],
-]);
-
-export const allJobGroupNameMap = new Map<string, JobGroup>([
-  [developer.name, developer],
-  [designer.name, designer],
-  [marketer.name, marketer],
-  [etc.name, etc],
-]);
-
 export const allJobGroupList = ['개발', '디자인', '마케팅', '그 외 직군'];
+
+export const allJobGroupMap: JobGroup[] = [developer, designer, marketer, etc];
+
+export const jobGroupMap = new Map<string, JobGroup>();
+
+allJobGroupMap.forEach((jobGroup) => {
+  jobGroupMap.set(jobGroup.code, jobGroup);
+  jobGroupMap.set(jobGroup.name, jobGroup);
+});

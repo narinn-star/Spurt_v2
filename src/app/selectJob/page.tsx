@@ -2,11 +2,7 @@
 
 import ButtonXL from '@/components/buttons/ButtonXL';
 import JobButton from '@/components/buttons/JobButton';
-import {
-  allJobGroupCodeMap,
-  allJobGroupList,
-  allJobGroupNameMap,
-} from '@/const/jobGroups';
+import { allJobGroupList, jobGroupMap } from '@/const/jobGroups';
 import { jobState } from '@/status/jobStatus';
 import { useRecoilState } from 'recoil';
 
@@ -14,7 +10,7 @@ export default function SelectJob() {
   const [job, setJob] = useRecoilState(jobState);
 
   const handleJobSelect = (selectedJob: string) => {
-    setJob(allJobGroupCodeMap.get(selectedJob)?.name as string);
+    setJob(jobGroupMap.get(selectedJob)?.name as string);
   };
 
   const handleSignUp = (selectedJob: string) => {
@@ -34,14 +30,14 @@ export default function SelectJob() {
             <JobButton
               key={item}
               label={item}
-              selected={item === allJobGroupNameMap.get(job)?.code}
+              selected={item === jobGroupMap.get(job)?.code}
               onClick={() => handleJobSelect(item)}
             />
           );
         })}
       </div>
       <div className="flex">
-        <ButtonXL style={{ backgroundColor: '#302e2e' }}>
+        <ButtonXL onClick={() => handleSignUp(job)}>
           이 직군으로 저장하기
         </ButtonXL>
       </div>
