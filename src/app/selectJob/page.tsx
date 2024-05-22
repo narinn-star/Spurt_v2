@@ -29,10 +29,11 @@ export default function SelectJob() {
           return (
             <JobButton
               key={item}
-              label={item}
               selected={item === jobGroupMap.get(job)?.code}
               onClick={() => handleJobSelect(item)}
-            />
+            >
+              {item}
+            </JobButton>
           );
         })}
       </div>
