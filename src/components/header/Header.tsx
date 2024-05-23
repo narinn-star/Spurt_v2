@@ -4,12 +4,19 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import LoginButton from '../buttons/LoginButton';
+import { useState } from 'react';
+import ProfileModal from '../modals/ProfileModal';
 
 const Header = () => {
   const router = useRouter();
+  const [isProfileOpened, setIsProfileOpened] = useState(false);
+
+  const clickProfile = () => {
+    setIsProfileOpened(!isProfileOpened);
+  };
   return (
     <>
-      <div className="flex flex-row h-[100px] justify-center ">
+      <div className="flex flex-row h-[100px] justify-center">
         <div className="flex justify-between items-center w-[1000px]">
           <div className="flex items-center">
             <button onClick={() => router.push('/')}>
@@ -35,10 +42,19 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <div className="flex flex-row items-center">
-            <Link href="/signin">
-              <LoginButton>로그인</LoginButton>
-            </Link>
+          <div className="">
+            <button onClick={clickProfile}>
+              <Image
+                priority
+                src="/icons/pin-fill-42.svg"
+                width="50"
+                height="50"
+                className="rounded-full"
+                alt="프로필 사진"
+              ></Image>
+            </button>
+            {isProfileOpened && <ProfileModal></ProfileModal>}
+
             {/* {user ? (
             <>
               <button onClick={clickProfile}>
@@ -54,8 +70,8 @@ const Header = () => {
             </>
           ) : (
             <Link href="/signin">
-              <CTA3 text="로그인"></CTA3>
-            </Link>
+              <LoginButton>로그인</LoginButton>
+            </Link> 
           )} */}
           </div>
         </div>
