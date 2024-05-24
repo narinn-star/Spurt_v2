@@ -1,19 +1,38 @@
 'use client';
 
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import LoginButton from '../buttons/LoginButton';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ProfileModal from '../modals/ProfileModal';
 
 const Header = () => {
   const router = useRouter();
+  const pathName = usePathname();
   const [isProfileOpened, setIsProfileOpened] = useState(false);
+  const profileRef = useRef<HTMLDivElement>(null);
 
   const clickProfile = () => {
     setIsProfileOpened(!isProfileOpened);
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      profileRef.current &&
+      !profileRef.current.contains(event.target as Node)
+    ) {
+      setIsProfileOpened(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <>
       <div className="flex flex-row h-[100px] justify-center">
@@ -30,19 +49,33 @@ const Header = () => {
               />
             </button>
             <div className="flex justify-between ml-[130px]">
-              <Link href="/" className={`mr-[50px] text-heading4`}>
+              <Link
+                href="/"
+                className={`${
+                  pathName === '/' ? 'text-heading1' : 'text-heading4'
+                } mr-[50px]`}
+              >
                 질문 모음
               </Link>
-              <Link href="/experience" className={`mr-[50px] text-heading4`}>
+              <Link
+                href="/experience"
+                className={`${
+                  pathName === '/experience' ? 'text-heading1' : 'text-heading4'
+                } mr-[50px]`}
+              >
                 나의 경험
               </Link>
-
-              <Link href="/summaryNote" className={` mr-[50px] text-heading4`}>
+              <Link
+                href="/note"
+                className={`${
+                  pathName === '/note' ? 'text-heading1' : 'text-heading4'
+                } mr-[50px]`}
+              >
                 요약 노트
               </Link>
             </div>
           </div>
-          <div className="">
+          <div className="" ref={profileRef}>
             <button onClick={clickProfile}>
               <Image
                 priority
@@ -53,7 +86,9 @@ const Header = () => {
                 alt="프로필 사진"
               ></Image>
             </button>
-            {isProfileOpened && <ProfileModal></ProfileModal>}
+            {isProfileOpened && (
+              <ProfileModal handleModal={clickProfile}></ProfileModal>
+            )}
 
             {/* {user ? (
             <>

@@ -1,7 +1,11 @@
 import Image from 'next/image';
 //import { useSession } from 'next-auth/react';
 
-const ProfileModal = () => {
+interface ProfileModalProps {
+  handleModal: () => void;
+}
+
+const ProfileModal = ({ handleModal }: ProfileModalProps) => {
   //const { data: session } = useSession();
   return (
     <div className="absolute">
@@ -28,7 +32,7 @@ const ProfileModal = () => {
             <p className="text-caption3 text-gray-400">kkongzi1234@gamil.com</p>
           </div>
         </div>
-        <button>
+        <button onClick={handleModal}>
           <Image
             priority
             src="/icons/delete-16-gray.svg"
