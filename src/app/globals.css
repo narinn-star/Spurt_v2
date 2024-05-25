@@ -26,13 +26,45 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   color: #302e2e;
-  font-size: 100px;
   background: #f9f6f5;
   overflow-x: hidden;
+  width: 100vw;
+  justify-content: center;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+.max-w-responsive {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  .max-w-responsive {
+    max-width: 640px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .max-w-responsive {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  .max-w-responsive {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .max-w-responsive {
+    max-width: 1000px;
   }
 }
