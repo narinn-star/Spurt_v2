@@ -17,7 +17,7 @@ const ContentsContainer = (props: ContentsContainerProps) => {
       ) : (
         <></>
       )}
-      <div className="max-w-responsive bg-white rounded-[20px] h-[287px] mt-[20px] p-[30px] shadow-sm">
+      <div className="max-w-responsive bg-white rounded-[20px] min-h-[287px] mt-[20px] p-[30px] shadow-sm">
         {props.children}
       </div>
     </div>
