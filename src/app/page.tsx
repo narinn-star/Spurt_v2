@@ -1,6 +1,10 @@
 'use client';
 
 import ButtonL from '@/components/buttons/ButtonL';
+import RandomBtn from '@/components/buttons/RandomButton';
+import FirstQuestionCard from '@/components/cards/FirstQuestionCard';
+import QuestionCard from '@/components/cards/QuestionCard';
+import RandomCard from '@/components/cards/RandomCard';
 import ContentsContainer from '@/components/containers/ContentContainer';
 import MainContainer from '@/components/containers/MainContainer';
 import Header from '@/components/header/Header';
@@ -36,11 +40,28 @@ export default function Home() {
       </MainContainer>
 
       <ContentsContainer title="나의 질문 모음">
-        <div></div>
+        <p className="text-right mb-[20px] text-body2">총 8개</p>
+        <div className="grid grid-cols-2 gap-3">
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+        </div>
+        {/* <FirstQuestionCard /> */}
       </ContentsContainer>
 
       <ContentsContainer title={'사람들이'} subtitle="최근에 올린 질문">
-        <div></div>
+        <div className="grid grid-flow-col justify-center gap-[12px]">
+          <RandomCard subject="냥" />
+          <RandomCard subject="냥" />
+          <RandomCard subject="냥" />
+          <RandomCard subject="냥" />
+        </div>
+        <RandomBtn title="다른 질문 더보기" />
       </ContentsContainer>
     </>
   );
