@@ -1,8 +1,10 @@
 'use client';
 
 import { ReactNode } from 'react';
+import ExperienceCard from '../cards/ExperienceCard';
 
 interface ContentsContainerProps {
+  experienceCard?: ReactNode;
   children: ReactNode;
   title: string;
   subtitle?: string;
@@ -17,6 +19,7 @@ const ContentsContainer = (props: ContentsContainerProps) => {
       ) : (
         <></>
       )}
+      {props.experienceCard}
       <div className="max-w-responsive bg-white rounded-[20px] min-h-[287px] mt-[20px] p-[30px] shadow-sm">
         {props.children}
       </div>
