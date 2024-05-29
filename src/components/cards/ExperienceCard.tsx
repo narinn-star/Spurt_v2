@@ -11,15 +11,18 @@ const ExperienceCard = ({
   title,
   onClickCard,
 }: ExperienceCardProps) => {
+  const commonClasses =
+    'flex flex-col p-[20px] text-heading1 rounded-[20px] cursor-pointer min-h-[98px] min-w-[360px] max-w-[360px] mt-[15px]';
+  const optionClasses =
+    index == selectedIndex ? 'bg-main-200 shadow-md' : 'bg-white shadow-sm';
+  const className = `${commonClasses} ${optionClasses}`;
   return (
-    <div className="flex flex-col p-[20px] text-title8 min-h-[98px] bg-main-200 rounded-[20px] cursor-pointer min-w-[360px] max-w-[360px] mt-[15px] shadow-md">
-      {title}
-    </div>
+    <div className={className}>{title}</div>
     //   <div
     //     className={
     //       index == selectedIndex
-    //         ? `flex flex-col p-[20px] bg-main-200 rounded-[20px] cursor-pointer min-w-[360px] max-w-[360px] mt-[15px] shadow-md`
-    //         : `flex flex-col p-[20px] bg-white rounded-[20px] cursor-pointer min-w-[360px] max-w-[360px] mt-[15px] shadow-sm`
+    //         ? `bg-main-200 rounded-[20px] cursor-pointer min-w-[360px] max-w-[360px] mt-[15px] shadow-md`
+    //         : `bg-white rounded-[20px] cursor-pointer min-w-[360px] max-w-[360px] mt-[15px] shadow-sm`
     //     }
     //     onClick={() => onClickCard(index)}
     //   >
