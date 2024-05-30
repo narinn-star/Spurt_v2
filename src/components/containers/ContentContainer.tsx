@@ -1,11 +1,12 @@
 'use client';
 
+import Image from 'next/image';
 import { ReactNode } from 'react';
-import ExperienceCard from '../cards/ExperienceCard';
 
 interface ContentsContainerProps {
   experienceCard?: ReactNode;
   children: ReactNode;
+  icons?: string;
   title: string;
   subtitle?: string;
 }
@@ -13,9 +14,24 @@ interface ContentsContainerProps {
 const ContentsContainer = (props: ContentsContainerProps) => {
   return (
     <div className="w-full max-w-[1000px] mt-[100px] mb-[150px] mx-auto">
-      <p className="text-title2 max-w-responsive">
-        {props.title} {props.experienceCard}
-      </p>
+      <div className="text-title2 max-w-responsive">
+        {props.icons ? (
+          <div className="flex flex-row gap-[10px]">
+            <Image
+              src={props.icons}
+              alt="icons"
+              priority
+              width={24}
+              height={24}
+            />
+            {props.title}
+          </div>
+        ) : (
+          <>
+            {props.title} {props.experienceCard}
+          </>
+        )}
+      </div>
       {props.subtitle ? (
         <p className="text-title2 max-w-responsive">{props.subtitle}</p>
       ) : (
