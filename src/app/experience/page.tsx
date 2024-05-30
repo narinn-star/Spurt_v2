@@ -42,10 +42,9 @@ export default function Experience() {
       <ContentsContainer
         title="나의 경험 정리"
         experienceCard={
-          <div className="flex flex-row gap-3">
+          <>
             <ExperienceCard title="NEXTERS 23기" index={1} selectedIndex={1} />
-            <ExperienceCard title="NEXTERS 23기" index={2} selectedIndex={1} />
-          </div>
+          </>
         }
       >
         <div className="flex justify-between items-center mb-[20px]">
