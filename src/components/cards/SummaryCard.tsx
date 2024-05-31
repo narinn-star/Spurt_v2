@@ -1,16 +1,17 @@
-import PinFill from '@/img/pin-fill-42.svg';
-import PinStroke from '@/img/pin-stroke-42.svg';
+'use client';
 import Image from 'next/image';
 
 interface SummaryCardProps {
   //questionId: number;
   title: string;
   isPinned: boolean;
+  bgColor?: string;
   //updateExperience: (items: Experience[]) => void;
 }
 
 const SummaryCard = ({
   //questionId,
+  bgColor,
   title,
   isPinned,
 }: //updateExperience,
@@ -33,11 +34,12 @@ SummaryCardProps) => {
   //       query: { postId: questionId },
   //     });
   //   };
-
+  const commonClasses =
+    'flex flex-col p-[16px]  rounded-[16px] min-w-[226px] max-w-[226px]';
+  const optionClasses = bgColor ? 'bg-main-200' : 'bg-main-100';
+  const className = `${commonClasses} ${optionClasses}`;
   return (
-    <div
-      className={`flex flex-col p-[16px] bg-main-100 rounded-[16px] min-w-[226px] max-w-[226px]`}
-    >
+    <div className={className}>
       <div
         className="text-heading2 h-[152px] cursor-pointer"
         // onClick={() => onClickCard(questionId)}
