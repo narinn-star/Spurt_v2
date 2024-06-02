@@ -7,11 +7,7 @@ interface ContainerProps {
 }
 
 const Container = (props: ContainerProps) => {
-  return (
-    <div className="flex flex-col max-w-responsive mb-[100px]">
-      {props.children}
-    </div>
-  );
+  return <div className="max-w-responsive mb-[100px]">{props.children}</div>;
 };
 
 export default Container;

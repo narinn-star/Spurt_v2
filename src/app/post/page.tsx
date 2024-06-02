@@ -3,6 +3,7 @@ import ButtonS from '@/components/buttons/ButtonS';
 import Container from '@/components/containers/Container';
 import PostContentContainer from '@/components/containers/PostContentContainer';
 import PostTitleContainer from '@/components/containers/PostTitleContainer';
+import Keyword from '@/components/keywords/Keyword';
 import Image from 'next/image';
 
 export default function Post() {
@@ -17,7 +18,12 @@ export default function Post() {
           priority
         />
       </button>
-      <p className="text-title1 mt-[82px] mb-[20px]">질문-답변 만들기</p>
+      <div className="flex flex-row items-center mt-[82px] mb-[20px] gap-[16px]">
+        <p className="text-title1 ">질문-답변 만들기</p>
+        <p className="border-l-2 border-main-300 pl-[12px] text-heading3 text-gray-600">
+          기업적 디자인 스튜디오 : 언어재활 환자를 위한 홈 Iot 서비스
+        </p>
+      </div>
       <PostTitleContainer>
         <input
           className="py-[14px] w-full outline-none"
@@ -28,8 +34,8 @@ export default function Post() {
         <div className="py-[16px]">케러셀 자리</div>
       </PostTitleContainer>
       <PostContentContainer>
-        <input
-          className="w-full outline-none min-h-[350px]"
+        <textarea
+          className="w-full outline-none min-h-[350px] resize-none text-start"
           placeholder="답변을 입력해주세요"
         />
         <p className="text-right text-body11 text-gray-300 mt-[30px] mb-[30px]">
@@ -41,6 +47,14 @@ export default function Post() {
           <p className="text-caption2 text-gray-300">
             키워드는 최대 20개까지 가능해요
           </p>
+        </div>
+        <div className="flex flex-wrap mb-[12px] gap-[6px]">
+          <Keyword text="개발자 협업 : 넥스터즈" />
+          <Keyword text="개발자 협업 : 넥스터즈" />
+          <Keyword text="개발자 협업 : 넥스터즈" />
+          <Keyword text="개발자 협업 : 넥스터즈" />
+          <Keyword text="개발자 협업 : 넥스터즈" />
+          <Keyword text="개발자 협업 : 넥스터즈" />
         </div>
         <button
           className="flex flex-row w-[124px] justify-center items-center bg-main-400 
