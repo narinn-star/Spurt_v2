@@ -5,8 +5,8 @@ import SummaryCard from '@/components/cards/SummaryCard';
 import ContentsContainer from '@/components/containers/ContentContainer';
 import MainContainer from '@/components/containers/MainContainer';
 import Header from '@/components/header/Header';
-import SummaryKeyword from '@/components/keywords/SumaryKeyword';
-import SumamryKeyword from '@/components/keywords/SumaryKeyword';
+import SummaryKeyword from '@/components/keywords/SummaryKeyword';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
