@@ -13,31 +13,31 @@ export default function Experience() {
     <>
       <MainContainer>
         <Header />
-        <div className="flex flex-row justify-between max-w-responsive">
-          <div className="flex flex-col mt-[60px] text-title1 mb-[12px]">
-            <p className="inline">
-              <span className="underline underline-offset-8 decoration-main-400 decoration-4">
-                나의 경험
-              </span>
-              이 담긴
-            </p>
-            <p>예상질문을 정리해요</p>
-          </div>
-          <div className="flex items-end mb-[12px]">
-            <Link href={'/post'}>
+        <div className="flex flex-col justify-between max-w-responsive">
+          <div className="flex justify-between items-end">
+            <div className="flex flex-col mt-[60px] text-title1 mb-[12px]">
+              <p>
+                <span className="underline underline-offset-8 decoration-main-400 decoration-4">
+                  나의 경험
+                </span>
+                이 담긴
+              </p>
+              <p>예상질문을 정리해요</p>
+            </div>
+            <Link href={'/post'} className="mb-[12px]">
               <ButtonL>경험 정리하기</ButtonL>
             </Link>
           </div>
+          <Image
+            priority
+            src="/images/Illust_myProject.png"
+            width="1000"
+            height="320"
+            alt="questionIllust"
+            unoptimized
+            className="min-w-[1000px] min-h-[320px]"
+          />
         </div>
-        <Image
-          priority
-          src="/images/Illust_myProject.png"
-          width="1000"
-          height="320"
-          alt="questionIllust"
-          unoptimized
-          className="min-w-[1000px] min-h-[320px]"
-        />
       </MainContainer>
       <ContentsContainer
         title="나의 경험 정리"

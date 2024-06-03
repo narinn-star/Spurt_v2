@@ -16,27 +16,28 @@ export default function Home() {
     <>
       <MainContainer>
         <Header />
-        <div className="flex flex-row justify-between max-w-responsive">
-          <div className="flex flex-col mt-[60px] text-title1 mb-[12px]">
-            <p className="underline underline-offset-8 decoration-main-400 decoration-4">
-              꽁지님 안녕하세요
-            </p>
-            <p>오늘도 마지막까지 화이팅!</p>
-          </div>
-          <div className="flex items-end mb-[12px]">
-            <Link href={'/post'}>
+        <div className="flex flex-col justify-between max-w-responsive">
+          <div className="flex justify-between items-end">
+            <div className="flex flex-col mt-[60px] text-title1 mb-[12px]">
+              <p className="underline underline-offset-8 decoration-main-400 decoration-4">
+                꽁지님 안녕하세요
+              </p>
+              <p>오늘도 마지막까지 화이팅!</p>
+            </div>
+            <Link href={'/post'} className="mb-[12px]">
               <ButtonL>질문-답변 만들기</ButtonL>
             </Link>
           </div>
+          <Image
+            priority
+            src="/images/Illust_question.png"
+            width="1000"
+            height="320"
+            alt="questionIllust"
+            unoptimized
+            className="min-w-[1000px]"
+          />
         </div>
-        <Image
-          priority
-          src="/images/Illust_question.png"
-          width="1000"
-          height="320"
-          alt="questionIllust"
-          className="min-w-[1000px]"
-        />
       </MainContainer>
 
       <ContentsContainer title="나의 질문 모음">

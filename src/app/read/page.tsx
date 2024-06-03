@@ -1,13 +1,19 @@
+import Container from '@/components/containers/Container';
+import MainContainer from '@/components/containers/MainContainer';
+import Image from 'next/image';
+
 export default function Read() {
   return (
-    <>
-      <div className="absolute top-0 left-0 bg-main_bg h-full">
-        {/* <Image src={IllustSignIn} alt="signin" /> */}
-        <div className="mt-[50px] flex justify-center">
-          {/* <GoogleSignInButton></GoogleSignInButton> */}
-          read
-        </div>
-      </div>
-    </>
+    <MainContainer>
+      <button className="mt-[24px]">
+        <Image
+          src="/icons/arrow-right-circle-yellow-54.svg"
+          alt="arrowIcon"
+          width={54}
+          height={54}
+          priority
+        />
+      </button>
+    </MainContainer>
   );
 }
