@@ -3,7 +3,7 @@ import ButtonS from '@/components/buttons/ButtonS';
 import Container from '@/components/containers/Container';
 import PostContentContainer from '@/components/containers/PostContentContainer';
 import PostTitleContainer from '@/components/containers/PostTitleContainer';
-import Keyword from '@/components/keywords/Keyword';
+import KeywordInput from '@/components/keywords/KeywordInput';
 import Image from 'next/image';
 
 export default function Post() {
@@ -49,12 +49,12 @@ export default function Post() {
           </p>
         </div>
         <div className="flex flex-wrap mb-[12px] gap-[6px]">
-          <Keyword text="개발자 협업 : 넥스터즈" />
-          <Keyword text="개발자 협업 : 넥스터즈" />
-          <Keyword text="개발자 협업 : 넥스터즈" />
-          <Keyword text="개발자 협업 : 넥스터즈" />
-          <Keyword text="개발자 협업 : 넥스터즈" />
-          <Keyword text="개발자 협업 : 넥스터즈" />
+          <KeywordInput text="개발자 협업 : 넥스터즈" />
+          <KeywordInput text="개발자 협업 : 넥스터즈" />
+          <KeywordInput text="개발자 협업 : 넥스터즈" />
+          <KeywordInput text="개발자 협업 : 넥스터즈" />
+          <KeywordInput text="개발자 협업 : 넥스터즈" />
+          <KeywordInput text="개발자 협업 : 넥스터즈" />
         </div>
         <button
           className="flex flex-row w-[124px] justify-center items-center bg-main-400 

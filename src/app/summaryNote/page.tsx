@@ -5,7 +5,7 @@ import SummaryCard from '@/components/cards/SummaryCard';
 import ContentsContainer from '@/components/containers/ContentContainer';
 import MainContainer from '@/components/containers/MainContainer';
 import Header from '@/components/header/Header';
-import SummaryKeyword from '@/components/keywords/SummaryKeyword';
+import Keyword from '@/components/keywords/Keyword';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -65,13 +65,15 @@ export default function SummaryNote() {
                 height={40}
               />
             </div>
-            <SummaryKeyword
+            <Keyword
               text="마크다운과 직접 입력으로 키워드를 등록할 수 있어요"
               isVisible={true}
+              use="summaryNote"
             />
-            <SummaryKeyword
+            <Keyword
               text="면접을 준비하는 취업준비생을 위한 서비스인데용, SPURT"
               isVisible={true}
+              use="summaryNote"
             />
           </div>
           <div className="border-[0.7px] mx-[30px] bg-[#989898]" />
