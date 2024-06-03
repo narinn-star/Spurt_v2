@@ -6,6 +6,7 @@ import ContentsContainer from '@/components/containers/ContentContainer';
 import MainContainer from '@/components/containers/MainContainer';
 import Header from '@/components/header/Header';
 import Keyword from '@/components/keywords/Keyword';
+
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -14,28 +15,32 @@ export default function SummaryNote() {
     <>
       <MainContainer>
         <Header />
-        <div className="flex flex-row justify-between max-w-responsive">
-          <div className="flex flex-col mt-[60px] text-title1 mb-[12px]">
-            <p className="underline underline-offset-8 decoration-main-400 decoration-4">
-              꽁지님 안녕하세요
-            </p>
-            <p>오늘도 마지막까지 화이팅!</p>
-          </div>
-          <div className="flex items-end mb-[12px]">
-            <Link href={'/post'}>
+        <div className="flex flex-col justify-between max-w-responsive">
+          <div className="flex justify-between items-end">
+            <div className="flex flex-col mt-[60px] text-title1 mb-[12px]">
+              <p>면접 직전, 핀으로 고정한</p>
+              <p>
+                <span className="underline underline-offset-8 decoration-main-400 decoration-4">
+                  질문과 답변
+                </span>
+                을 확인해요
+              </p>
+            </div>
+
+            <Link href={'/post'} className="mb-[12px]">
               <ButtonL>질문-답변 만들기</ButtonL>
             </Link>
           </div>
+          <Image
+            priority
+            src="/images/Illust_summaryNote.png"
+            width="1000"
+            height="320"
+            alt="questionIllust"
+            className="min-w-[1000px]"
+            unoptimized
+          />
         </div>
-        <Image
-          priority
-          src="/images/Illust_summaryNote.png"
-          width="1000"
-          height="320"
-          alt="questionIllust"
-          className="min-w-[1000px]"
-          unoptimized
-        />
       </MainContainer>
       <ContentsContainer
         title="요약노트"
@@ -63,10 +68,12 @@ export default function SummaryNote() {
             <Keyword
               text="마크다운과 직접 입력으로 키워드를 등록할 수 있어요"
               isVisible={true}
+              use="summaryNote"
             />
             <Keyword
               text="면접을 준비하는 취업준비생을 위한 서비스인데용, SPURT"
               isVisible={true}
+              use="summaryNote"
             />
           </div>
           <div className="border-[0.7px] mx-[30px] bg-[#989898]" />

@@ -2,15 +2,34 @@
 
 interface KeywordProps {
   text: string;
-  isVisible: boolean;
+  isVisible?: boolean;
+  use: string;
 }
 
-const Keyword = ({ text, isVisible }: KeywordProps) => {
+const Keyword = ({ text, isVisible, use }: KeywordProps) => {
+  const summaryKeywordStyle = ' bg-main-100 text-body7 break-keep';
+  const readKeywordStyle = 'bg-main-200 text-body6';
+  const commonStyle =
+    'px-[14px] py-[8px] text-gray-600 rounded-[5px] border border-keyword_border';
   return (
     <div className="flex mb-[12px]">
-      <div className="max-w-[2px] w-full rounded-[30px] bg-main-300 mr-[8px]" />
-      <div className="px-[14px] py-[8px] text-gray-600 bg-main-100 rounded-[5px] border border-opacity-30 border-main-400 text-body7 break-keep">
-        <p className={isVisible ? '' : 'blur-[3px]'}>{text}</p>
+      {use == 'summaryNote' ? (
+        <div className="max-w-[2px] w-full rounded-[30px] bg-main-300 mr-[8px]" />
+      ) : (
+        <></>
+      )}
+      <div
+        className={
+          use == 'summaryNote'
+            ? `${commonStyle} ${summaryKeywordStyle}`
+            : `${commonStyle} ${readKeywordStyle}`
+        }
+      >
+        {use == 'summaryNote' ? (
+          <p className={isVisible ? '' : 'blur-[3px]'}>{text}</p>
+        ) : (
+          <p>{text}</p>
+        )}
       </div>
     </div>
   );
