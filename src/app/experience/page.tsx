@@ -24,7 +24,7 @@ export default function Experience() {
               </p>
               <p>예상질문을 정리해요</p>
             </div>
-            <Link href={'/post'} className="mb-[12px]">
+            <Link href={'/experiencePost'} className="mb-[12px]">
               <ButtonL>경험 정리하기</ButtonL>
             </Link>
           </div>
