@@ -65,9 +65,9 @@ const Header = () => {
               나의 경험
             </Link>
             <Link
-              href="/note"
+              href="/summaryNote"
               className={`${
-                pathName === '/note' ? 'text-heading1' : 'text-heading4'
+                pathName === '/summaryNote' ? 'text-heading1' : 'text-heading4'
               } mr-[50px]`}
             >
               요약 노트

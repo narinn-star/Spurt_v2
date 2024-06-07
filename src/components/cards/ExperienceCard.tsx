@@ -17,7 +17,7 @@ const ExperienceCard = ({
     index == selectedIndex ? 'bg-main-200 shadow-md' : 'bg-white shadow-sm';
   const className = `${commonClasses} ${optionClasses}`;
   return (
-    <div className={className}>{title}</div>
+    <button className={className}>{title}</button>
     //   <div
     //     className={
     //       index == selectedIndex
