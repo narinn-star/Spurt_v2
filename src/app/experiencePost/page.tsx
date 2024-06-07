@@ -29,17 +29,17 @@ export default function experiencePost() {
         />
         <hr />
         <div className="flex items-center gap-[8px] py-[16px]">
-          <ExperienceInput placeholder="시작년도" readOnly={true} />
-          <ExperienceInput placeholder="월" readOnly={true} />
+          <ExperienceInput placeholder="시작년도" disabled={false} />
+          <ExperienceInput placeholder="월" disabled={false} />
           <p className="text-gray-400 mx-[12px]">-</p>
           <ExperienceInput
             placeholder="종료년도"
-            readOnly={false}
+            disabled={true}
             className="bg-gray-100"
           />
           <ExperienceInput
             placeholder="월"
-            readOnly={true}
+            disabled={true}
             className="bg-gray-100"
           />
           <p className="ml-[12px] text-body2 text-gray-400 mr-[5px]">진행중</p>
@@ -62,11 +62,11 @@ export default function experiencePost() {
           경험 소개
         </p>
         <textarea
-          className="w-full outline-none min-h-[350px] resize-none text-start"
+          className="w-full outline-none min-h-[300px] resize-none text-start"
           placeholder="해당 프로젝트에 대해 설명해주세요"
         />
-        <p className="text-right text-body11 text-gray-300 mt-[30px] mb-[30px]">
-          123/1000
+        <p className="text-right text-body11 text-gray-300 mt-[20px] mb-[20px]">
+          12/300
         </p>
         <hr />
         <div className="flex gap-[10px] mt-[20px]">
