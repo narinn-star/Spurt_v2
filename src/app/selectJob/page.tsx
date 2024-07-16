@@ -10,7 +10,7 @@ export default function SelectJob() {
   const [job, setJob] = useRecoilState(jobState);
 
   const handleJobSelect = (selectedJob: string) => {
-    setJob(jobGroupMap.get(selectedJob)?.name as string);
+    //setJob(jobGroupMap.get(selectedJob)?.name as string);
   };
 
   const handleSignUp = (selectedJob: string) => {
@@ -38,7 +38,9 @@ export default function SelectJob() {
         })}
       </div>
       <div className="flex">
-        <ButtonXL onClick={() => handleSignUp(job)}>
+        <ButtonXL
+        //onClick={() => handleSignUp(job)}
+        >
           이 직군으로 저장하기
         </ButtonXL>
       </div>
