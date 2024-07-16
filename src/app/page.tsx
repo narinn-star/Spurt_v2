@@ -10,8 +10,15 @@ import MainContainer from '@/components/containers/MainContainer';
 import Header from '@/components/header/Header';
 import Image from 'next/image';
 import Link from 'next/link';
+import client from './api/client';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    // 클라이언트 측에서 쿠키를 읽고 콘솔에 출력
+    console.log('Cookies:', document.cookie);
+  }, []);
+
   return (
     <>
       <MainContainer>
@@ -64,6 +71,13 @@ export default function Home() {
         </div>
         <RandomBtn title="다른 질문 더보기" />
       </ContentsContainer>
+      {/* <button
+        onClick={async () => {
+          await client.get(`/v1/question/random?category=MAJOR`);
+        }}
+      >
+        눌러
+      </button> */}
     </>
   );
 }
